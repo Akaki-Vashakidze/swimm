@@ -1,0 +1,12 @@
+<mat-expansion-panel *ngFor="let event of events">
+  <mat-expansion-panel-header>{{
+    event.event + " " + event.gender
+  }}</mat-expansion-panel-header>
+      <mat-panel-title  *ngFor="let swimmer of event.results">
+        <div class="swimmerInfo">{{ swimmer.name }}</div>
+        <div class="swimmerInfo">{{ swimmer.result }}</div>
+        <div class="swimmerInfo">{{ swimmer.points }}</div>
+        <div class="swimmerInfo">{{ swimmer.age }}</div>
+        <div class="swimmerInfo">{{ swimmer.club }}</div>
+      </mat-panel-title>
+</mat-expansion-panel>

@@ -1,0 +1,68 @@
+<div class="formDiv">
+    <form [formGroup]="userForm" class="form">
+        <div class="form-input">
+          <mat-form-field color="accent">
+            <mat-label>სახელი:</mat-label>
+            <input formControlName="FirstName" #name matInput />
+          </mat-form-field>
+        </div>
+      
+        <div class="form-input">
+          <mat-form-field color="accent">
+            <mat-label>გვარი:</mat-label>
+            <input formControlName="LastName" #lastName matInput />
+          </mat-form-field>
+        </div>
+      
+        <div class="form-input">
+          <mat-form-field color="accent">
+            <mat-label>აიდი:</mat-label>
+            <input formControlName="UserName" #username matInput />
+            <mat-hint>Min 5 characters</mat-hint>
+          </mat-form-field>
+        </div>
+      
+        <div class="form-input">
+          <mat-form-field>
+            <mat-label>სქესი</mat-label>
+            <mat-select formControlName="Gender" #gender>
+              <mat-option value="male">მამრობითი</mat-option>
+              <mat-option value="female">მდედრობითი</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      
+        <div class="form-input">
+          <mat-form-field color="accent">
+            <mat-label>მეილი:</mat-label>
+            <input formControlName="Gmail" #gmail matInput />
+          </mat-form-field>
+        </div>
+      
+        <div class="form-input">
+          <mat-form-field color="accent">
+            <mat-label>მობილურის ნომერი:</mat-label>
+            <input formControlName="Number" #number matInput />
+          </mat-form-field>
+        </div>
+      
+        <div class="form-input">
+          <mat-form-field color="accent">
+            <mat-label>პაროლი:</mat-label>
+            <input formControlName="Password1" #password1 type="password" matInput />
+            <mat-hint>მინიმუმ 7 ასო</mat-hint>
+          </mat-form-field>
+        </div>
+      
+        <div class="form-input">
+          <mat-form-field color="accent">
+            <mat-label>გაიმეორეთ პაროლი:</mat-label>
+            <input formControlName="Password2" #password2 type="password" matInput />
+            <mat-hint>მინიმუმ 7 ასო</mat-hint>
+          </mat-form-field>
+        </div>
+        <button (click)="saveForm()" mat-raised-button>რეგისტრაცია</button>
+        <button  mat-raised-button>შესვლა</button>
+      </form>
+      
+</div>

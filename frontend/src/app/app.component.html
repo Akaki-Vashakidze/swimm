@@ -1,0 +1,40 @@
+<div class="toolbar">
+  <mat-toolbar>
+    <mat-toolbar-row>
+      <mat-icon (click)="addCard()">add</mat-icon>
+      <div class="sidenav-toggle" (click)="addCard()">ბარათის დამატება</div>
+      <div *ngIf="!signedIn" class="sign">
+        <span (click)="openDialog()" class="signs">შესვლა</span>
+        <span routerLink="/signUp" class="signs">რეგისტრაცია</span>
+      </div>
+      <div *ngIf="signedIn" class="sign">
+        <span (click)="logOut()" class="signs">გასვლა</span>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>
+
+
+
+<mat-sidenav-container>
+  <mat-sidenav class="sidenav" mode="side" [(opened)]="opened">
+    <mat-form-field appearance="fill">
+      <mat-label>სახელი:</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>გვარი:</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>დისციპლინა:</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let event of EVENTS" value="one">{{event}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button>ბარათის დამატება</button>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
